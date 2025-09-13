@@ -4,18 +4,26 @@ title: Project Dataset and Topics
 output: html
 ---
 
-[Link to dataset]()
+[Link to dataset](https://www.openbrewerydb.org/documentation)
 
 Things you plan to investigate using this dataset:
 
-- Thing 1
-- Thing 2
-- Thing 3
+- Location(s) of breweries
+- Naming of breweries
+- Types of breweries
+- Taking elements from websites of breweries
 
 Stat 351 topics you plan to cover during the analysis:
 
-1. Topic 1
-2. Topic 2
-3. Topic 3
-4. Topic 4
+1. Reading in API data
+2. Parsing JSON
+3. Scraping data from websites
+4. Using appropriate graphics
 
+```{r}
+library(httr)
+library(jsonlite)
+library(tidyverse)
+
+brew <- GET("https://api.openbrewerydb.org/v1/breweries")
+```
