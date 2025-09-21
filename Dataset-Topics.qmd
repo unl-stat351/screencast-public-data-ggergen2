@@ -27,3 +27,16 @@ library(tidyverse)
 
 brew <- GET("https://api.openbrewerydb.org/v1/breweries")
 ```
+
+---
+
+Comments:
+
+- Breweries don't have a standard website format, so this is likely to be a bit more challenging than you expect to get systematic data back out.
+
+- What do you plan to do with the naming of breweries? What type of analysis/investigation can you do with that?
+
+
+- A spatial analysis of whether breweries in similar areas/close proximity tend to specialize vs. compete might be interesting -- I have no idea if the data supports this or not. You could limit it to one or two cities known for having a ton of breweries, though?
+
+- Do some digging to ensure that this data is relatively complete before you settle on it -- if only so that you can acknowledge the limitations of your dataset. 
