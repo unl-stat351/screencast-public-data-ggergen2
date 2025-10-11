@@ -1,5 +1,5 @@
 ---
-author: Your Name
+author: Grey Gergen
 title: Project Dataset and Topics
 output: html
 ---
@@ -25,7 +25,7 @@ library(httr)
 library(jsonlite)
 library(tidyverse)
 
-brew <- GET("https://api.openbrewerydb.org/v1/breweries")
+brew <- fromJSON("https://api.openbrewerydb.org/v1/breweries")
 ```
 
 ---
@@ -36,7 +36,12 @@ Comments:
 
 - What do you plan to do with the naming of breweries? What type of analysis/investigation can you do with that?
 
+Look for common naming or most used words. See if region has any significance with naming.
 
 - A spatial analysis of whether breweries in similar areas/close proximity tend to specialize vs. compete might be interesting -- I have no idea if the data supports this or not. You could limit it to one or two cities known for having a ton of breweries, though?
 
+I like the spatial analysis and will probably end up doing something with that.
+
 - Do some digging to ensure that this data is relatively complete before you settle on it -- if only so that you can acknowledge the limitations of your dataset. 
+
+Looks pretty complete. I used fromJSON and returned a cleaned dataset on this script.

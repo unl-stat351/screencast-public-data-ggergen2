@@ -1,6 +1,38 @@
 ---
-author: Your Name
+author: Grey Gergen
 title: Screencast Pseudocode
 output: html
 ---
+
+Will be using [openbrewerydb](https://www.openbrewerydb.org/documentation) an open database API containing brewery data.
+
+1. Call all breweries in the US filtering on descending alphabetical order. API is limited to 200 breweries per page so will have to call multiple pages until all US breweries are accounted for. Not great for the server load but will only do once.
+
+- Use fromJSON from jsonlite
+
+2. combine the datasets into one
+
+- Use rbind from base R
+
+3. store the data in a csv in the project and recall it to reduce load on the server.
+
+- Use write.csv and read.csv from base
+
+4. Display on a map of the US amount of breweries using bubble plot for each city with at least one brewery. Do the same for each type of brewery.
+
+- Use dplyr group_by to group city then call usmaps to get outline of the US then geom_point and scale_size_area to craft the bubble points based on the counts of breweries in each city.
+
+5. Run an analysis on the naming of breweries, how many use some part of their location whether it is state, city, address, or postal code. Display using a table the amounts of names using each aspect of location.
+
+- Use stringr and string_detect and grepl to match aspects of the different location columns to the names of the brewery.
+- Use kabble to print a table with the findings from above.
+
+6. See how many breweries are named similary even if they are in different locations. make sure to leave out breweries that are under a parent company.
+
+- Use fuzzyjoin to find similarities in naming convention, filter out breweries under a parent company or in similar location. 
+
+7. Select a website of a local Nebraska brewery to scrape certain elements
+
+- Use httr, rveest, xml2, to pull elements from a local Nebraska brewery
+
 
