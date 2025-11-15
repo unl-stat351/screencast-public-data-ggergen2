@@ -1,5 +1,5 @@
 ---
-author: Your Name
+author: Grey Gergen
 title: 'Project: Scraping Public Data Screencast'
 output: html
 ---
